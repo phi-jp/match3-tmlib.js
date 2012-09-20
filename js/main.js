@@ -11,7 +11,12 @@ tm.main(function() {
     app.fitWindow();
     app.enableStats();
     
-    var titleScene = MainScene();
+    var bgm = tm.sound.SoundManager.get("bgm");
+    bgm.loop = true;
+    bgm.volume = 0.5;
+    bgm.play();
+    
+    var titleScene = TitleScene();
     app.replaceScene(titleScene);
     
     app.run();
