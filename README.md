@@ -11,3 +11,8 @@ match3-tmlib.js
 ## Blog
 
 [TM Life](http://tmlife.net/programming/javascript/javascript-lib-tmlib-js-open-with-10-sample.html)
+
+
+## Twitter
+
+[@phi_jp](https://twitter.com/phi_jp)
