@@ -11,5 +11,8 @@ tm.main(function() {
     app.fitWindow();
     app.enableStats();
     
+    var titleScene = MainScene();
+    app.replaceScene(titleScene);
+    
     app.run();
 });
