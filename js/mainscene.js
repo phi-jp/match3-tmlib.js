@@ -161,7 +161,7 @@
                             rst.forEach(function(elm) { elm.disappear(); });
                             tm.sound.SoundManager.get("pinpon").play();
                             // タイマー回復
-                            this.gameData.time = Math.min(this.gameData.time+50, TIME);
+                            this.gameData.time = Math.min(this.gameData.time+25, TIME);
                             // スコア更新
                             this.gameData.score += 100;
                             this.scoreLabel.text = "Score:" + this.gameData.score;
@@ -187,7 +187,7 @@
                             bottom2.disappear();
                             tm.sound.SoundManager.get("pinpon").play();
                             // タイマー回復
-                            this.gameData.time = Math.min(this.gameData.time+50, TIME);
+                            this.gameData.time = Math.min(this.gameData.time+25, TIME);
                             // スコア更新
                             this.gameData.score += 100;
                             this.scoreLabel.text = "Score:" + this.gameData.score;
