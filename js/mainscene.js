@@ -37,6 +37,8 @@
             this.titleLabel.text = mode;
             // ゲージ
             this.gauge.originX = 0.0;
+            this.gauge.canvas.width = this.gauge.width;
+            this.gauge.canvas.height= this.gauge.height;
             this.gauge.canvas.clearColor("white");
             
             // ボードを作成
