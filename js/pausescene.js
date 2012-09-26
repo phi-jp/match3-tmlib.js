@@ -15,7 +15,7 @@
             
             this.bgm = bgm;
             
-            var filter = tm.app.Sprite(SCREEN_WIDTH, SCREEN_HEIGHT);
+            var filter = tm.app.Shape(SCREEN_WIDTH, SCREEN_HEIGHT);
             filter.setPosition(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
             filter.canvas.clearColor("rgba(0, 0, 0, 1.0)");
             this.addChild(filter);

@@ -24,9 +24,8 @@
             this.fromJSON(UI_DATA);
             
             this.playLabel.ontouchstart = function() {
-                var fade = tm.app.Sprite().addChildTo(this);
+                var fade = tm.app.Shape(SCREEN_WIDTH, SCREEN_HEIGHT).addChildTo(this);
                 fade.originX = fade.originY = 0;
-                fade.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 fade.canvas.clearColor("white");
                 fade.alpha = 0.0;
                 fade.animation.fadeIn(1000);

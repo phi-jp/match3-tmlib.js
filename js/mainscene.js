@@ -12,7 +12,7 @@
             { type: "Label", name: "titleLabel", x:SCREEN_CENTER_X, y:80, width:SCREEN_WIDTH, text:"title", align:"center", fontSize:50 },
             { type: "Label", name: "scoreLabel", x:350, y:125, width:SCREEN_WIDTH, text:"Score: 0", align:"center", fontSize:25 },
             { type: "Label", name: "timeLabel", x:260, y:160, width:SCREEN_WIDTH, text:"Time:", fontSize:25, visible: false },
-            { type: "Sprite", name: "gauge", x:40, y:170, width:GAUGE_WIDTH, height: 25 },
+            { type: "Shape", name: "gauge", x:40, y:170, width:GAUGE_WIDTH, height: 25 },
         ]
     };
     
@@ -41,7 +41,7 @@
             this.gauge.canvas.clearColor("white");
             
             // ボードを作成
-            var board = tm.app.Sprite(PIECE_SIZE*8, PIECE_SIZE*8);
+            var board = tm.app.Shape(PIECE_SIZE*8, PIECE_SIZE*8);
             board.position.set(SCREEN_CENTER_X, SCREEN_CENTER_Y+50);
             board.canvas.clearColor("rgba(255, 255, 255, 0.1)");
             board.canvas.strokeStyle = "white";
@@ -313,13 +313,17 @@
 (function(ns) {
     
     ns.Piece = tm.createClass({
-        superClass: tm.app.CanvasElement,
+        superClass: tm.app.Sprite,
         
         init: function(color) {
             this.superInit();
             
             this.width  = PIECE_SIZE;
             this.height = PIECE_SIZE;
+            this.image  = PIECE_IMAGE;
+            this.srcRect.width = PIECE_SIZE;
+            this.srcRect.height= PIECE_SIZE;
+            
             this.interaction.enabled = true;
             this.interaction.boundingType = "rect";
             
@@ -329,11 +333,12 @@
             this.isMove     = false;
             this.isFall     = false;
             this.isDisappear= false;
+            
         },
         
         setColor: function(color) {
             this.color = color;
-            this.fillStyle = ["white", "red", "green", "blue", "yellow", "purple", "cyan"][color];
+            this.setFrameIndex(color);
         },
         
         
@@ -372,12 +377,14 @@
             this.isDisappear = true;
         },
         
+        /*
         // 描画
         draw: function(c) {
             c.strokeRect(-25, -25, 50, 50);
             c.fillCircle(0, 0, 22, 22);
             // c.fillStar(0, 0, 22, 6, 0.5);
         },
+        */
         
         // 通常状態かをチェック
         isNormal: function() {
