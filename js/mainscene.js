@@ -36,7 +36,6 @@
             this.fromJSON(UI_DATA);
             this.titleLabel.text = mode;
             // ゲージ
-            console.dir(this.gauge);
             this.gauge.originX = 0.0;
             this.gauge.canvas.clearColor("white");
             
