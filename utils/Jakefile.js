@@ -9,7 +9,7 @@ desc("This is the default task.");
 task("default", [], function() {
     //console.log("Hello, world!");
     
-    var out = fs.createWriteStream("script.js");
+    var out = fs.createWriteStream("../build/script.js");
     var target = [
         "../js/param.js",
         "../js/main.js",
